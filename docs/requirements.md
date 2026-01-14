@@ -128,17 +128,20 @@
 ## 3. 技術要件
 
 ### 3.1 フロントエンド
-- **フレームワーク**: Next.js (React)
+- **フレームワーク**: Next.js (React) / App Router
 - **言語**: TypeScript
 - **スタイリング**: Tailwind CSS
-- **状態管理**: Zustand または Redux Toolkit
+- **状態管理**: Zustand
 - **UIライブラリ**: shadcn/ui
+- **データフェッチ**: TanStack Query (React Query)
 
 ### 3.2 バックエンド
-- **フレームワーク**: Next.js API Routes または Node.js (Express)
+- **APIフレームワーク**: Hono（エッジ対応・高速）
 - **言語**: TypeScript
-- **データベース**: PostgreSQL
-- **ORM**: Prisma
+- **実行環境**: Cloudflare Workers / Vercel Edge Functions
+- **データベース**: PostgreSQL（エッジ対応）
+- **ORM**: Drizzle ORM（軽量・高速）または Prisma
+- **キャッシュ**: Cloudflare KV / Upstash Redis
 
 ### 3.3 AI機能
 - **LLM API**: OpenAI API (GPT-4) または Claude API
@@ -146,13 +149,14 @@
   - レシート文字認識（OCR）
   - 食材画像認識
   - バーコード読み取り
-- AI応答のストリーミング対応
+- AI応答のストリーミング対応（Hono Streaming）
 - プロンプトテンプレート管理
 
 ### 3.4 インフラ
-- **ホスティング**: Vercel
-- **データベース**: Supabase または PlanetScale
-- **画像ストレージ**: Cloudflare R2 または AWS S3
+- **ホスティング**: Cloudflare Pages + Workers / Vercel Edge
+- **データベース**: Neon（サーバーレスPostgreSQL）/ PlanetScale / Turso
+- **画像ストレージ**: Cloudflare R2
+- **CDN**: Cloudflare
 
 ---
 
